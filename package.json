@@ -1,0 +1,52 @@
+{
+  "name": "chargeblast-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Chargeblast payments REST API (NestJS + PostgreSQL)",
+  "type": "module",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "rm -rf dist && tsc -p tsconfig.build.json",
+    "start": "node dist/main.js",
+    "start:dev": "nest start --watch --preserveWatchOutput",
+    "db:migrate": "node dist/database/cli/migrate.js",
+    "db:seed": "node dist/database/cli/seed.js",
+    "db:migrate:dev": "tsc -p tsconfig.build.json && node dist/database/cli/migrate.js",
+    "db:seed:dev": "tsc -p tsconfig.build.json && node dist/database/cli/seed.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run --project unit",
+    "test:integration": "vitest run --project integration",
+    "test:all": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@nestjs/common": "12.6.0",
+    "@nestjs/core": "12.6.0",
+    "@nestjs/platform-express": "12.6.0",
+    "pg": "8.23.1",
+    "reflect-metadata": "0.2.2",
+    "rxjs": "7.8.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@nestjs/cli": "12.0.15",
+    "@nestjs/testing": "12.6.0",
+    "@types/express": "^5.0.6",
+    "@types/node": "24.19.2",
+    "@types/pg": "8.23.1",
+    "@types/supertest": "7.2.1",
+    "eslint": "10.15.0",
+    "globals": "17.14.0",
+    "prettier": "3.10.1",
+    "supertest": "7.3.2",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.74.0",
+    "vitest": "5.1.1"
+  }
+}
